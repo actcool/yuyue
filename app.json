@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/state/state",
+    "pages/my/my",
+    "pages/mycoach/mycoach",
+    "pages/user_detail/user_detail",
+    "pages/appoint/appoint",
+    "pages/work/work"
+    
+  ],
+  "usingComponents": {
+    "iconfont": "/iconfont/iconfont"
+},
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+    {
+    "pagePath": "pages/appoint/appoint",
+    "text": "预约",
+    "selectedIconPath": "/images/appoint_1.png",
+    "iconPath": "/images/appoint.png"
+    },
+    {
+    "pagePath": "pages/work/work",
+    "text": "工作",
+    "selectedIconPath": "/images/work_1.png",
+    "iconPath": "/images/work.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "selectedIconPath": "/images/my_1.png",
+      "iconPath": "/images/my.png"
+      }
+    ],
+    "borderStyle": "black" ,
+    "color": "#CCCCCC",
+    "selectedColor": "#4783B5"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

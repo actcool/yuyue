@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dx-header" : "/components/my/header-0/header",
+    "dx-number" : "/components/my/detail/detail"
+  },
+  "navigationBarTitleText": "我的教练 "
+}

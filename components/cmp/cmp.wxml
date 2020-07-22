@@ -1,0 +1,11 @@
+<!-- <view class="cmp-bc"></view> -->
+
+<view class="max">
+  <view class="forinput">
+    <input value="name" focus="true" class="input" ></input>
+  </view>
+  <view class="options">
+    <view class="no two" bindtap="no" >取消</view>
+    <view class="yes two">确认</view>
+  </view>
+</view>

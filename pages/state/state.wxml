@@ -1,0 +1,3 @@
+<block wx:for="{{data}}" wx:for-item="item"   wx:for-index="index" >
+  <dx-state data="{{item}}" />
+</block>

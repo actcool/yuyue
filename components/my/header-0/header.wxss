@@ -1,0 +1,50 @@
+.usert{
+  
+  height: 124rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my{
+  width: 650rpx;
+}
+.coach{
+  width: 680rpx;
+}
+.user{
+  width: 500rpx;
+  height: 124rpx;
+  display: flex;
+  align-items: center;
+}
+.user_img{
+  width: 124rpx;
+  height: 124rpx;
+  border-radius: 10rpx;
+}
+.count{
+  width: 300rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+.user_name{
+  display: flex;
+  align-items: center;
+  width:300rpx ;
+  height: 53rpx;
+  font-size: 35rpx;
+  line-height:53rpx ;
+}
+.weChat_number{
+  width:300rpx ;
+  height: 53rpx;
+  font-size: 35rpx;
+  line-height:53rpx ;
+  font-size: 30rpx;
+  color: #888888;
+}
+
+

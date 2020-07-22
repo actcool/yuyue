@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dx-header" : "/components/my/header-0/header",
+    "dx-option" : "/components/my/options/options"
+  },
+  "navigationBarTitleText": "我的"
+}

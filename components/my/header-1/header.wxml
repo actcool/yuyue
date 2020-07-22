@@ -1,0 +1,13 @@
+<view class="out">
+  <text>{{data.title}}</text>
+  <block wx:if="{{data.if}}">
+      <view class="count">
+        <iconfont  name="you" class="icon" />
+          <image class="user_img" src="{{data.count}}" mode="cover"></image>
+      </view>
+  </block>
+  <block wx:else >
+    <image class="user_img" src="{{data.count}}" mode="cover"></image>
+  </block>
+  
+</view> 

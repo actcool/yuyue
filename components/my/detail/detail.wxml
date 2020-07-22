@@ -1,0 +1,13 @@
+<view class="out">
+  <text>{{data.title}}</text>
+  <block wx:if="{{data.if}}">
+      <view class="count">
+        <iconfont  name="you" class="icon" />
+        <text class="detail">{{data.count}}</text>
+      </view>
+  </block>
+  <block wx:else>
+    <text class="detail" bindtap="copy" data-ifcopy="{{data.ifcopy}}" data-data="{{data.count}}" >{{data.count}}</text>
+  </block>
+  
+</view> 

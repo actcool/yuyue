@@ -1,0 +1,10 @@
+<view class="out">
+  <view class="count">
+    <text class="{{data.ifEffective ? 'effectTime' : 'invalid'}}">{{data.day}}</text>
+    <text class="{{data.ifEffective ? 'effectTime' : 'invalid'}}">{{data.hour}}</text>
+  </view>
+  <view class="count">
+    <text class="{{data.ifEffective ? 'effectCount' : 'invalid'}}">{{data.count}}</text>
+    <text class="{{data.ifEffective ? 'effectCount' : 'invalid'}}">{{data.ifEffective ? '生效中' : '已过期'}}</text>
+  </view>
+</view> 

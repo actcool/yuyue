@@ -1,0 +1,31 @@
+.out{
+  width: 690rpx;
+  height: 40rpx;
+  margin: 0 auto;
+  margin-top: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.text{
+  font-size: 32rpx;
+  color: black;
+}
+
+.user_img{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 10rpx;
+}
+
+.count{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.icon{
+  margin-left: 30rpx;
+}

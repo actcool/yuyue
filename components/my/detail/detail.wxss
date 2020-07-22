@@ -1,0 +1,30 @@
+.out{
+  width: 690rpx;
+  height: 40rpx;
+  margin: 0 auto;
+  margin-top: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text{
+  font-size: 32rpx;
+  color: black;
+}
+
+.count{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.icon{
+  margin-left: 30rpx;
+}
+
+.detail{
+  font-size: 30rpx;
+  color: #888888;
+}
+

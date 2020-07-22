@@ -1,0 +1,13 @@
+<view class="userOut"  >
+  <dx-header data="{{user}}" bindtap="userDetail" />
+</view> 
+
+
+<dx-option   data="{{state}}"      />
+<dx-option   data="{{coach}}"  bindtap="coach" />
+<dx-option   data="{{work}}"       />
+<dx-option   data="{{fleet}}"      />
+<dx-option   data="{{manage}}"     />
+<dx-option   data="{{scan}}"       />
+<dx-option   data="{{QrCode}}"     />
+<dx-option   data="{{feedback}}"   />

@@ -1,0 +1,43 @@
+.white{
+  width: 100%;
+  height: 110rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.box{
+  width: 650rpx;
+  height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.count{
+  width: 500rpx;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+}
+.text{
+  margin-left: 30rpx;
+  /* margin-bottom: 5rpx; */
+  font-size: 30rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mt{
+  margin-top: 24rpx;
+}
+.nomt{
+  border: solid 1rpx #EFEFEF;
+}

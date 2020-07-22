@@ -1,0 +1,13 @@
+page{
+  background-color: #F6F6F6;
+}
+.white{
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+  padding-top: 50rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}

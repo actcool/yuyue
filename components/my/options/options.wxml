@@ -1,0 +1,9 @@
+<view class="white {{data.class}}">
+  <view class="box">
+    <view class="count">
+      <iconfont name="{{data.icon}}" size="25"></iconfont>
+      <text class="text">{{data.title}}</text>
+    </view>
+    <iconfont name="you"></iconfont>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+ <view class="usert {{data.width}}"  >
+    <view class="user">
+      <image class="user_img" src="{{data.img}}" mode="cover"></image>
+      <view class="count"> 
+        <view class="user_name">
+          {{data.nickname}}
+          <block wx:if="{{data.sex==1}}"><iconfont name="women-copy" size="22"></iconfont></block>
+          <block else><iconfont name="man" size="22"></iconfont></block>  
+        </view>
+        <text class="weChat_number">{{data.wechateNumber}}</text>
+      </view>
+    </view>
+    <iconfont name="you"></iconfont>
+  </view>
+

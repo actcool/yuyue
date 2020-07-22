@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dx-state" : "/components/state/state"
+  },
+  "navigationBarTitleText": "我的状态"
+}
