@@ -1,0 +1,79 @@
+page{
+  background-color: #F6F6F6;
+}
+
+.white{
+  width: 750rpx;
+  height: 180rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.user{
+  width: 682rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 100rpx;
+}
+
+.sex{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top:30rpx;
+  right: 30rpx;
+}
+
+.count{
+  width: 250rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: royalblue; */
+}
+
+.name{
+  font-size: 36rpx;
+}
+
+.number{
+  font-size: 30rpx;
+  color: #9d9d9d;
+}
+
+.navigate{
+  /* width: 162rpx; */
+  width: 300rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delate{
+  width: 110rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 20rpx;
+}
+
+.text_fasle{
+  font-size: 30rpx;
+  color: #AAAAAA;
+}
+.text_true{
+  font-size: 30rpx;
+  color: #6d6c6c;
+}

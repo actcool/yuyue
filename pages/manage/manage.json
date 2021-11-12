@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "dx-coach" : "/components/thecoach/coach"
+  },
+  "navigationBarTitleText": "人员管理 ",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true 
+}

@@ -1,2 +1,185 @@
-<!--pages/appoint/appoint.wxml-->
-<text>pages/appoint/appoint.wxml</text>
+<view class="title">
+  <text class="welcome">东鑫预约</text>  
+</view>
+
+
+
+<view class="form" wx:if="{{!success}}" >
+  <view class="white">
+    <view class="remind" wx:if='{{status==2}}'> 正在练习中。。。  </view>
+    
+    <picker bindchange="Picker_Date" value="{{dateIndex}}" range="{{dateArray}}" >
+      <view class="time">
+        <view class="left">日期</view>
+        <view class="right">{{dateArray[dateIndex]}}-{{dateArray0[dateIndex]}}</view>
+      </view>
+    </picker>
+
+    <view wx:if="{{teamId==2}}" class="time oneCoach_project">
+      <view class="left">练习项目</view>
+      <view class="right">{{projectArray[projectIndex]}}</view>
+    </view>
+ 
+
+    <picker wx:if="{{teamId!=2}}" bindchange="Picker_Project" value="{{projectIndex}}" range="{{projectArray}}">
+      <view class="time">
+        <view class="left">练习项目</view>
+        <view class="right">{{projectArray[projectIndex]}}</view>
+      </view>
+    </picker>
+
+    <picker wx:if="{{teamId!=2}}" bindchange="Picker_Coach" value="{{myCoachsIndex}}" range="{{myCoachsArray}}" wx:if="{{!byTime}}">
+      <view class="time">
+        <view class="left">教练</view>
+        <view class="right">{{myCoachsArray[myCoachsIndex]}}</view>
+      </view>
+    </picker>
+
+    <view class="first" wx:if="{{teamId!=2}}" > 
+      <view class="moren {{byTime?'yes':'no'}}" bindtap="byTime">时间搜索</view>
+      <view class="moren {{!byTime?'yes':'no'}}" bindtap="byCoach">教练搜索</view>
+    </view>
+
+  </view>
+
+  <!-- 教练搜索临时名额 -->
+  <view class="show" wx:if="{{status==2&&!byTime&&dateIndex==0}}"> 
+    <text class="whatBeShow">临时名额 </text>
+    <block wx:for="{{allforappoint}}" wx:for-item="item"   wx:for-index="index">
+      <view class="option" wx:if="{{item.flagTemp==1||item.flagTemp==2}}">
+        <view class="times">{{item.start_time}}-{{item.end_time}}</view>
+        <view class="project"> {{byTime ? projects[projectIndex] : item.isLeave==1 ? '请假中' : carArray[item.nowcar]}} </view>
+        <view wx:if="{{item.flagTemp==1&&item.isLeave!=1}}" class="quota green " >{{item.temp_count}}/{{item.temp_sum}}</view>
+        <view wx:if="{{item.flagTemp==2&&item.isLeave!=1}}" class="quota red " >{{item.temp_count}}/{{item.temp_sum}}</view>
+        <view wx:if="{{item.flagTemp==3||item.isLeave==1}}" class="quota grey " >{{item.temp_count}}/{{item.temp_sum}}</view>
+        <view class="appoint" bindtap="appoint_temp_coach" data-item="{{item}}" >
+            <iconfont wx:if="{{item.flagTemp==1&&item.isLeave!=1}}" name="baoming" size="35" color="green" />
+            <iconfont wx:if="{{item.flagTemp==2&&item.isLeave!=1}}" name="baoming" size="35" color="red" />
+            <iconfont wx:if="{{item.flagTemp==3||item.isLeave==1}}" name="baoming" size="35" color="#707070" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 时间搜索临时名额 -->
+  <view class="show" wx:if="{{status==2&&byTime&&dateIndex==0&&teamId!=2}}"  > 
+    <text class="whatBeShow">临时名额 {{tempforappoint[0].start_time}}-{{tempforappoint[0].end_time}}</text>
+    <block wx:for="{{tempforappoint}}" wx:for-item="item"   wx:for-index="index">
+      <view class="option" >
+        <view class="coach_temp">{{item.username}}-{{carArray[item.nowcar]}}</view>
+        <view class="project"> {{ projects[projectIndex] }} </view>
+        <view wx:if="{{item.flagTemp==1}}" class="quota green " >{{item.temp_count}}/{{item.temp_sum}}</view>
+        <view wx:if="{{item.flagTemp==2}}" class="quota red " >{{item.temp_count}}/{{item.temp_sum}}</view>
+        <view class="appoint" bindtap="appoint_temp_time" data-item="{{item}}" >
+            <iconfont wx:if="{{item.flagTemp==1}}" name="baoming" size="35" color="green" />
+            <iconfont wx:if="{{item.flagTemp==2}}" name="baoming" size="35" color="red" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 车队正式名额 -->
+  <view class="show" wx:if="{{teamId!=2}}" > 
+    <text class="whatBeShow">正式名额</text>
+    <block wx:for="{{allforappoint}}" wx:for-item="item"   wx:for-index="index">
+      <view class="option">
+        <view class="times">{{item.start_time}}-{{item.end_time}}</view>
+        <view class="project"> {{byTime ? projects[projectIndex] : item.isLeave==1 ? '请假中' : carArray[item.nowcar]}} </view>
+        <view wx:if="{{item.flag==1&&item.isLeave!=1}}" class="quota green " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view wx:if="{{item.flag==2&&item.isLeave!=1}}" class="quota red " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view wx:if="{{item.flag==3||item.isLeave==1}}" class="quota grey " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view class="appoint" bindtap="appoint_team" data-startTime="{{item.start_time}}" data-endTime="{{item.end_time}}" data-flag="{{item.flag}}" data-item="{{item}}" >
+            <iconfont wx:if="{{item.flag==1&&item.isLeave!=1}}" name="baoming" size="35" color="green" />
+            <iconfont wx:if="{{item.flag==2&&item.isLeave!=1}}" name="baoming" size="35" color="red" />
+            <iconfont wx:if="{{item.flag==3||item.isLeave==1}}" name="baoming" size="35" color="#707070" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 单个教练 正式名额-->
+  <view class="show" wx:if="{{teamId==2}}" > 
+    <view class="whatBeShow"></view>
+    <block wx:for="{{allforappoint}}" wx:for-item="item"   wx:for-index="index">
+      <view class="option">
+        <view class="times">{{item.start_time}}-{{item.end_time}}</view>
+        <view class="project"> {{item.isLeave==1 ? "请假中" : carArray[item.nowcar]}} </view>
+        <view wx:if="{{item.flag==1&&item.isLeave!=1}}" class="quota green " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view wx:if="{{item.flag==2&&item.isLeave!=1}}" class="quota red " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view wx:if="{{item.flag==3||item.isLeave==1}}" class="quota grey " >{{item.main_count}}/{{item.main_sum}}</view>
+        <view class="appoint" bindtap="appoint_team_onecoach" data-startTime="{{item.start_time}}" data-endTime="{{item.end_time}}" data-flag="{{item.flag}}" data-item="{{item}}" >
+            <iconfont wx:if="{{item.flag==1&&item.isLeave!=1}}" name="baoming" size="35" color="green" />
+            <iconfont wx:if="{{item.flag==2&&item.isLeave!=1}}" name="baoming" size="35" color="red" />
+            <iconfont wx:if="{{item.flag==3||item.isLeave==1}}" name="baoming" size="35" color="#707070" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view wx:if="{{ifNull}}"> 
+    <text class="null">
+    "空的？"
+    </text> 
+    <text class="null">
+    "好像是欸"
+    </text> 
+    <text class="null">
+    "什么情况？"
+    </text> 
+    <text class="null">
+    "应该是没有教练在这天设置这个项目把~~"
+    </text> 
+  </view>
+    
+</view>
+
+
+  
+
+<!-- 预约成功界面 -->
+<view class="form"  wx:if="{{success}}" >
+  <view class="white_success">
+    <view class="title_success">预约时间安排</view>
+    <view class="hour_success"> {{successOrder.startTimeHour}}:{{successOrder.startTimeMinutes}} - {{successOrder.endTimeHour}}:{{successOrder.endTimeMinutes}} </view>
+    <view class="mounth_success" >{{successOrder.month}}.{{successOrder.day}} {{weeks[successOrder.weekIndex]}}</view>
+    <view class="count_success" > {{successOrder.coachName}}-{{carArray[successOrder.carIndex]}}-{{projects[successOrder.project]}}<text wx:if="{{successOrder.orderType==2}}">-临时名额</text> </view>
+  </view>
+  <view class="cancel" bindtap="cancel" >
+    撤销
+  </view> 
+</view>
+
+
+
+<!-- 车队报名 弹框显示详细教练表单 -->
+<view class="cmp-bc"  wx:if="{{ifCmp}}" catchtouchmove="preventTouchMove">
+  <view class="cmp">
+    <view class="cmp-count">
+        <text class="cmpTime"> {{ordersStart}}-{{ordersEnd}} </text>
+        <block wx:for="{{teamCoachs}}" wx:for-item="item"   wx:for-index="index">
+          <view class="cmp-option" bindtap="selectOrder" data-index="{{index}}" data-flag="{{item.flagMain==1}}">
+            <view class="cmp-detail">
+              <view class="cmp-icon">
+                <iconfont wx:if="{{orderIndex==index}}" name="queren_duigou" size="18"  />
+              </view>
+              
+              {{item.username}}-{{projectArray[projectIndex]}}-{{carArray[item.car]}}
+            </view>
+            <view  class="quota {{ item.flagMain==1? 'green' : 'red'}} " >
+              {{item.main_count}}/{{item.main_order}}
+            </view>
+          </view>
+        </block>
+    </view>
+
+
+    <view class="cmp-decision cmp-decision_right" bindtap="cmp_yes" >
+      报名
+    </view>
+    <view class="cmp-decision cmp-decision_left" bindtap="cmp_no">
+      取消
+    </view>
+    
+  </view>
+</view>
+

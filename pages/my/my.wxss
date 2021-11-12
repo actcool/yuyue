@@ -11,3 +11,105 @@ page{
   justify-content: center;
   align-items: center;
 }
+
+
+.loginOut{
+  width: 680rpx;
+  height: 124rpx;
+  display: flex;
+  align-items: center;
+}
+.img_login{
+  width: 124rpx;
+  height: 124rpx;
+}
+.title_login{
+  width: 220rpx;
+  height: 104rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titletext{
+  font-size: 35rpx;
+}
+.titlebottom{
+  font-size: 25rpx;
+  color: #888888;
+}
+
+.login{
+  width: 240rpx;
+  height: 80rpx;
+  /* background-color: lightgreen; */
+  background-color: white;
+  border-radius: 50rpx;
+  border:solid 3rpx #5EB8DB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logintext{
+  color: #5EB8DB;
+  font-size: 32rpx;
+  font-weight: 700;
+  /* font-weight: bold; */
+}
+
+
+/* .cmp-bc{
+  position: absolute;
+  top:0rpx;
+  width: 100%;
+  height: 1500rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+} */
+
+.out{
+  width: 100%;
+  height: 110rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.left{
+  margin-left: 54rpx;
+  display: flex;
+  align-items: center;
+}
+.nani{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.right{
+  margin-right: 38rpx;
+}
+
+
+
+
+.show{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #888888;
+  font-size: 28rpx;
+  
+}
+
+.mt{
+  margin-top: 37rpx;
+}
+.ab{
+position: absolute;
+  bottom: 20rpx;
+}

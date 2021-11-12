@@ -1,0 +1,13 @@
+
+
+.max{
+  position: absolute;
+  top: 350rpx;
+  left: 50rpx;
+  width: 650rpx;
+  height: 560rpx;
+  border-radius: 10rpx;
+  background-color: #64ADDB;
+  z-index: 2;
+
+}

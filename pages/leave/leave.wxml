@@ -1,0 +1,90 @@
+<view class="title">
+  <view class="welcome">您现有{{allLeave.length-1}}个假条</view>   
+</view>
+
+<view class="form" >
+  <view class="white"  bindtouchstart='touchStart' bindtouchend="touchEnd" >
+    <view class="remind" >
+      <block wx:for="{{allLeave}}"   wx:for-item="item"   wx:for-index="index">
+        <view class="circle {{index==leaveIndex ? 'beSelected' : '' }} "></view>
+      </block>
+      
+    </view>
+
+
+    <picker mode="date" value="{{startDate}}" start="2020-01-01" end="2025-12-31" bindchange="bindStartDateChange">
+      <view class="time">
+        <view class="left">开始日期</view>
+        <view class="right">{{allLeave[leaveIndex].startDate}}</view>
+      </view>
+    </picker>
+
+    <picker mode="time" value="" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+      <view class="time">
+        <view class="left">开始时间</view>
+        <view class="right">{{allLeave[leaveIndex].startTime}}</view>
+      </view>
+    </picker>
+    
+    <picker mode="date" value="" start="2020-01-01" end="2025-12-31" bindchange="bindEndDateChange">
+      <view class="time">
+        <view class="left">结束日期</view>
+        <view class="right">{{allLeave[leaveIndex].endDate}}</view>
+      </view>
+    </picker>
+
+    <picker mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+      <view class="time">
+        <view class="left">结束时间</view>
+        <view class="right">{{allLeave[leaveIndex].endTime}}</view>
+      </view>
+    </picker>
+
+    <view class="time" bindtap="inputReason">
+      <view class="left">请假事由(非必填)</view>
+      <view class="forinput">
+        {{allLeave[leaveIndex].content}}
+      </view>
+    </view>
+    
+
+
+  </view>
+
+  
+
+
+  
+
+  <view class="submit"  bindtap="submit" >
+    <text wx:if="{{!allLeave[leaveIndex].flag}}">提交</text>
+    <text wx:if="{{allLeave[leaveIndex].flag}}">提交修改</text>
+  </view>
+  <view class="cancel" wx:if="{{allLeave[leaveIndex].flag}}" bindtap="cancel">
+    撤销
+  </view>
+
+</view>
+
+
+
+
+
+<view class="cmp-bc" wx:if="{{ifcmp}}" bindtap="cancelInput" >
+</view>
+<dx-cmp wx:if="{{ifcmp}}"  bind:no="no" bind:yes="yes" data="{{cmpShow}}" />
+
+
+<view class="cmp_result" wx:if="{{laohei}}">
+  <view class="aaa a1" >本次请假与您以往请假时间重叠,</view>
+  <view class="aaa a2" >已经合并,被合并请假如下</view>
+  <view class="aaa a3" >开始：<text class="aa22">2020-20-20 18:00</text>  </view>
+  <view class="aaa a3" >结束：<text class="aa22">2020-20-20 18:00</text>  </view>
+  <view class="aaa a4" >理由：卡服划局是否德国</view>
+  <view class="aaa a5" >经典服饰规划局是否德国</view>
+  
+</view>
+
+
+<!-- <image src="/images/heiban.jpg" class="img"></image> -->
+

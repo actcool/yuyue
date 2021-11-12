@@ -1,0 +1,24 @@
+<block wx:for="{{allcoach}}"   wx:for-item="item"   wx:for-index="index">
+
+  <view class="white" >
+    <view class="user">
+      <image src="{{item.userPhoto}}" class="header"  />
+      <image wx:if="{{item.usersex==1}}" src="/images/man.png" class="sex" />
+      <image wx:if="{{item.usersex==2}}" src="/images/women.png" class="sex" />
+      <iconfont wx:if="{{item.usersex!=2&&item.usersex!=1}}" class="sex" name="noSex" />
+      <view class="count">
+        <text class="name">{{item.username}}</text>
+        <text class="number">{{item.userMobile}}</text>
+      </view>
+      <view class="navigate">
+        <text class="text_true">红1-倒库</text>
+        <view class="delate" bindtap="delate" data-name="{{item.username}}" data-coachId="{{item.coachId}}" data-index="index">
+          <iconfont name="jiegu1"  size="27"  />
+        </view>        
+      </view>
+    </view>
+  </view>
+
+</block>
+
+

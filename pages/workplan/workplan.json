@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "dx-cmp" : "/components/cmp/cmp"
+  },
+  "navigationBarBackgroundColor": "#3BA6D2",
+  "backgroundColor" : "#3BA6D2",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true ,
+  "navigationBarTitleText": ""
+
+}

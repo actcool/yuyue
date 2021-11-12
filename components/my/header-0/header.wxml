@@ -3,11 +3,13 @@
       <image class="user_img" src="{{data.img}}" mode="cover"></image>
       <view class="count"> 
         <view class="user_name">
-          {{data.nickname}}
-          <block wx:if="{{data.sex==1}}"><iconfont name="women-copy" size="22"></iconfont></block>
-          <block else><iconfont name="man" size="22"></iconfont></block>  
+          {{data.name}}
+          <!-- <block wx:if="{{data.sex==2}}"><iconfont name="women-copy" size="22"></iconfont></block>
+          <block wx:if="{{data.sex==1}}"><iconfont name="man" size="22"></iconfont></block>   -->
+          <iconfont wx:if="{{data.sex==2}}" name="women-copy" size="22"  />
+          <iconfont wx:if="{{data.sex==1}}" name="man" size="22"   />
         </view>
-        <text class="weChat_number">{{data.wechateNumber}}</text>
+        <text class="weChat_number">{{data.phoneNumber}}</text>
       </view>
     </view>
     <iconfont name="you"></iconfont>

@@ -1,3 +1,3 @@
 <block wx:for="{{data}}" wx:for-item="item"   wx:for-index="index" >
-  <dx-state data="{{item}}" />
+  <dx-state data="{{item}}" bindtap="cancle" data-item="{{item}}" data-index="{{index}}" />
 </block>

@@ -1,2 +1,78 @@
-<!--pages/work/work.wxml-->
-<text>pages/work/work.wxml</text>
+<view class="title">
+  <view class="welcome">东鑫预约</view>  
+  <view class="howUse" >
+    <iconfont  name="wenhao" size="23" />
+    <text> 使用说明 </text>
+  </view>
+  
+</view>
+
+<view class="form" >
+  <view class="white {{timeData[timeIndex].flag==2 ? '' : 'changepb'}}">
+    
+      <picker bindchange="PickerTime" value="{{timeIndex}}" range="{{timeArray}}">
+          <view class="time">
+          <view class="left">时段</view>
+          <view class="right">{{timeArray[timeIndex]}}</view>
+        </view>
+      </picker>
+     
+      <picker  wx:if="{{teamId!=2&&timeData[timeIndex].flag==2}}" bindchange="PickerTemp" value="{{tempIndex}}" range="{{tempArray}}">
+        <view class="time">
+          <view class="left">临时名额</view>
+          <view class="right">{{tempArray[tempIndex]}}</view>
+        </view>
+      </picker>
+
+      <view class="time greg">
+        <view class="left">教学项目</view>
+        <view class="right ">{{carArray[carIndex]}} - {{projects[projectIndex]}}</view>
+      </view>
+
+      <view  wx:if="{{timeData[timeIndex].flag!=2}}" class="aboutTime" >
+        <iconfont name="haimianbaobao-"  size="39" />
+        这个时间段不是距您最近的工作时段哦
+      </view>
+
+  </view>
+
+  <view class="show">
+    <!-- <view class="Num" >
+      <text>正式名额:{{zhengshiNum}}</text>
+      <text>临时名额:{{tempNum}}</text>
+    </view> -->
+    <block wx:for="{{studentsData}}" wx:for-item="item"   wx:for-index="index">
+      <view class="option">
+        <view class="user" >
+          <image src="{{item.user_photo}}" class="header" />
+          <image  src="{{ usersex==1 ? '/images/man.png' : '/images/women.png'}}" class="sex" />
+          <view class="fonts" >
+            <view class="name" > 
+              {{item.username}}
+              <iconfont wx:if="{{item.order_status==1}}" name="queren_duigou" class="queren_duigou"  size="18"  />
+              <iconfont wx:if="{{item.order_status==2}}" name="dengdai" class="queren_duigou"  size="18"  />
+              <iconfont wx:if="{{item.order_status==3}}" name="yichexiao1" class="queren_duigou"  size="55"  />
+            </view>
+            <view class="number">12346851254</view>
+          </view>
+          <view class="way" wx:if="{{item.order_type==2}}">
+            临时名额
+          </view>
+        </view>
+        <iconfont bindtap="confirm" data-index="{{index}}" wx:if="{{item.order_status==0}}" name="queren_renxing" size="30" />
+      </view>
+    </block>
+  </view>
+
+  <!-- <view class="submit">
+    提交
+  </view>
+  <view class="cancel">
+    撤销
+  </view> -->
+
+</view>
+
+
+
+

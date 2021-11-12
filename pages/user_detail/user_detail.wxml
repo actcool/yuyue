@@ -2,15 +2,14 @@
   <dx-header  data="{{header}}" />
   <dx-detail  data="{{nickName}}" />
   <dx-detail  data="{{sex}}" />
-  <dx-detail  data="{{wechateNumber}}" />
+  <dx-detail  data="{{role}}" />
 </view>
 
 <view class="white">
-  <dx-detail  data="{{name}}" bindtap="input" />
-  <dx-detail  data="{{role}}" />
-  <dx-detail  data="{{phoneNumber}}" />
+  <dx-detail  data="{{name}}" bindtap="inputName"  />
+  <dx-detail  data="{{phoneNumber}}" bindtap="inputNumber"  />
 </view>
 
 <view class="cmp-bc" wx:if="{{ifcmp}}" bindtap="cancelInput" >
 </view>
-<dx-cmp wx:if="{{ifcmp}}"  bind:no="no" />
+<dx-cmp wx:if="{{ifcmp}}"  bind:no="no" bind:yes="yes" data="{{cmpShow}}" />

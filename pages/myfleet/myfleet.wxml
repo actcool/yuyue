@@ -1,0 +1,103 @@
+<block wx:if="{{!showCoach}}">
+  <view class="icon_add" bindtap="create">
+   <iconfont name="add-fill" size="120" /> 
+   <text>创建车队</text>
+  </view>  
+</block>
+
+
+<block wx:if="{{showCoach}}" >
+
+  <view class="find">
+    <input class="input" value="{{inputValue}}"  placeholder="搜索教练" bindinput="inputCoach"></input>
+    <view class="option">
+      <view class="{{inputValue.length==0? 'cantgo' : 'go' }} "  bindtap="search" >搜索</view>
+      <view class="cuo" wx:if="{{inputValue.length!=0}}" bindtap="cls">
+      <iconfont name="cuo" size="22" />
+      </view>
+    </view>
+  </view>
+
+  
+    <block wx:if="{{!showFindResult}}">     <!-- 车队成员 -->
+      <block wx:for="{{allcoach}}"   wx:for-item="item"   wx:for-index="index">
+        <view class="white" >
+          <view class="user">
+            <image src="{{item.user_photo}}" class="header"  />
+            <image wx:if="{{item.usersex==1}}" src="/images/man.png" class="sex" />
+            <image wx:if="{{item.usersex==2}}" src="/images/women.png" class="sex" />
+            <iconfont wx:if="{{item.usersex!=2&&item.usersex!=1}}" class="sex" name="noSex" />
+            <view class="count">
+              <text class="name">{{item.username}} </text>
+              <text class="number">{{item.user_mobile}}</text>
+            </view>
+            <view class="navigate"  wx:if="{{item.coach_id!=item.captain}}"  bindtap="delateCoach" data-flag="{{item.flag}}" data-name="{{item.username}}" data-coachId="{{item.coach_id}}" data-delateWhich="allcoach" data-index="{{index}}">
+              <text class="{{item.flag ? 'text_true' : 'text_fasle' }}">删除成员</text>
+              <iconfont name="{{item.flag ? 'shanchu' : 'shanchu_fasle-copy' }}"  class="icon" />
+            </view>
+            <view class="navigate"  wx:if="{{item.coach_id==item.captain}}" >
+              <iconfont  size='70' name="duichangicon1"  />
+            </view>
+            <!-- <view class="navigate">
+              <text class="text_add">添加成员</text>
+              <iconfont name="add"  class="icon" />
+            </view> -->
+          </view>
+        </view>
+
+      </block>
+    </block>
+ 
+
+
+    <block wx:if="{{showFindResult}}">     <!-- 搜索结果 -->
+      <block wx:for="{{allFindCoach}}"   wx:for-item="item"   wx:for-index="index">
+        <view class="white" >
+          <view class="user">
+            <image src="{{item.user_photo}}" class="header"  />
+            <image wx:if="{{item.usersex==1}}" src="/images/man.png" class="sex" />
+            <image wx:if="{{item.usersex==2}}" src="/images/women.png" class="sex" />
+            <iconfont wx:if="{{item.usersex!=2&&item.usersex!=1}}" class="sex" name="noSex" />
+            <view class="count">
+              <text class="name">{{item.username}}</text>
+              <text class="number">{{item.user_mobile}}</text>
+            </view>
+            <view class="navigate" wx:if="{{item.flag==1}}" bindtap="addCoach" data-name="{{item.username}}" data-coachId="{{item.coach_id}}" data-index="{{index}}">
+              <text class="text_add">添加成员</text>
+              <iconfont name="add"  class="icon" />
+            </view>
+            <view class="navigate" wx:if="{{item.flag==2}}" >
+              <text class="text_fasle">添加成员</text>
+              <iconfont name="add-fill"  class="icon" />
+            </view>
+            <view class="navigate" wx:if="{{item.flag==3}}" bindtap="delateCoach" data-flag="{{item.flag}}" data-name="{{item.username}}" data-coachId="{{item.coach_id}}" data-delateWhich="allFindCoach" data-index="{{index}}">
+              <text class="text_true">删除成员</text>
+              <iconfont name="shanchu"  class="icon" />
+            </view>
+            <view class="navigate" wx:if="{{item.flag==4}}" >
+              <text class="text_fasle">删除成员</text>
+              <iconfont name="shanchu_fasle-copy"  class="icon" />
+            </view>
+          </view>
+        </view>
+
+      </block>
+    </block>
+  
+
+  <view class="jiesan {{coachLength<5? 'ab' : 'mt' }}" wx:if="{{ifcaptain&&!showFindResult}}" bindtap="jiesan"><iconfont name="fenzu" size="50" />解散车队</view>
+
+  <view class="jiesan {{coachLength<5? 'ab' : 'mt' }}" wx:if="{{!ifcaptain&&!showFindResult}}" bindtap="out"><iconfont name="fenzu" size="50" />退出车队</view>
+
+  
+</block>
+
+
+
+
+
+<view class="cmp-bc" wx:if="{{ifcmp}}" bindtap="cancelInput" >
+</view>
+<dx-cmp wx:if="{{ifcmp}}"  bind:no="no" bind:yes="yes" data="{{cmpShow}}" />
+
+

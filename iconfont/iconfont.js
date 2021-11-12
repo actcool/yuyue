@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // Group | fleet | find | richenganpai | scan | zhuangtai | zhuangtai1 | coach | feedback | QrCode | yuyue | you | man | women-copy | sanjiao | renqun
+    // yichexiao1 | kong | tuideng | shuxian | qiangbi | wenhao | haimianbaobao- | xuanzhong | jiegu1 | duichangicon1 | fenzu | add-fill | add-copy | add | cuo | cuo-copy | shanchu_fasle-copy | shanchuanniucopy | shanchu | dengdai | queren_font | queren_duigou | queren_renxing | baoming | qingjiazhong | leave | weidu | yidu | Group | fleet | find | richenganpai | scan | zhuangtai | zhuangtai1 | coach | feedback | QrCode | yuyue | you | noSex | women-copy
     name: {
       type: String,
     },

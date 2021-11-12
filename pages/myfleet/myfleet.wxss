@@ -1,0 +1,175 @@
+page{
+  background-color: #F6F6F6;
+}
+
+.find{
+  margin: auto;
+  margin-top: 30rpx;
+  width: 90%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  border: solid 5rpx rgb(43, 42, 42);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input{
+  width: 70%;
+  margin-left: 40rpx;
+  font-size: 33rpx;
+}
+.option{
+  margin-right: 20rpx;
+  height: 80rpx ;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.go{
+  height: 80rpx;
+  width: 100rpx;
+  /* background-color: burlywood; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  font-weight: 700;
+}
+.cantgo{
+  height: 80rpx;
+  width: 100rpx;
+  /* background-color: burlywood; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  font-weight: 700;
+  color: #8a8a8a;
+}
+
+.cuo{
+  height: 80rpx;
+  width: 100rpx;
+  /* background-color: blanchedalmond; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.white{
+  width: 750rpx;
+  height: 180rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.user{
+  width: 682rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 100rpx;
+}
+
+.sex{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top:30rpx;
+  right: 30rpx;
+}
+
+.count{
+  width: 370rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name{
+  font-size: 36rpx;
+}
+
+
+
+.number{
+  font-size: 30rpx;
+  color: #9d9d9d;
+}
+
+.navigate{
+  width: 162rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text_fasle{
+  font-size: 30rpx;
+  color: #AAAAAA;
+}
+.text_true{
+  font-size: 30rpx;
+  color: #ed3535;
+}
+.text_add{
+  font-size: 30rpx;
+  color: #1296db;
+}
+
+.icon_add{
+  margin: auto;
+  margin-top: 500rpx;
+  width: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.cmp-bc{
+  position: absolute;
+  top:0rpx;
+  width: 100%;
+  height: 1500rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+
+.jiesan{
+  width: 650rpx;
+  height: 100rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  color: #ed3535;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+.ab{
+  position: absolute;
+  bottom: 65rpx;
+  right: 50rpx;
+}
+
+.mt{
+  margin: auto;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}

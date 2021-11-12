@@ -1,1 +1,314 @@
-/* pages/appoint/appoint.wxss */
+page{
+  background-color: #F6F6F6;
+}
+.title{
+  width: 100%;
+  height: 360rpx;
+  background-color: #5EB8DB;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* padding-bottom: 30rpx; */
+}
+.welcome{
+  position: relative;
+  top: 75rpx;
+  font-size: 40rpx;
+  color: #F6F6F6;
+}
+.form{
+  position: relative;
+  bottom: 122rpx;
+}
+
+.white{
+  background-color: white;
+  width: 710rpx;
+  margin: auto;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50rpx;
+}
+
+.first{
+  width: 650rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-top: 30rpx;
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+}
+.moren{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}
+.yes{
+  width: 58%;
+  height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 80rpx;
+  background-color: #5EB8DB;
+  color: white;
+}
+.no{
+  width: 42%;
+  height: 80rpx;
+  color: black;
+}
+
+.remind{
+  margin-top: 20rpx;
+  height: 29rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.time{
+  width: 650rpx;
+  height: 74rpx;
+  background-color: #F6F6F6;
+  border-radius: 10rpx;
+  margin-top: 31rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.findCoach{
+  width: 710rpx;
+  height: 74rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-top: 81rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.left{
+  margin-left: 30rpx;
+}
+.right{
+  margin-right: 30rpx;
+}
+.oneCoach_project{
+  color: darkgrey;
+}
+
+.submit{
+  width: 710rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+  margin: auto;
+  margin-top: 60rpx;
+  background-color:#5EB8DB;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cancel{
+  width: 710rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+  margin: auto;
+  margin-top: 50rpx;
+  background-color:white ;
+  font-size: 30rpx;
+  color: #5EB8DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+.grey{
+  color: #707070;
+}
+
+.show{
+  background-color: white;
+  width: 710rpx;
+  margin: auto;
+  margin-top: 50rpx;
+  /* padding-top: 30rpx; */
+  padding-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.whatBeShow{
+  font-size: 28rpx;
+  height: 15rpx;
+  color: #707070;
+  margin-left: 55rpx;
+  position: relative;
+  top : 20rpx
+}
+
+.option{
+  font-size: 32rpx;
+  width: 650rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 20rpx;
+}
+
+.times{
+  width: 210rpx;
+  display: flex;
+}
+.coach_temp{
+  width: 210rpx;
+  display: flex;
+}
+.project{
+  width: 140rpx;
+  display: flex;
+  justify-content: center;
+}
+.quota{
+  width: 70rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.appoint{
+  width: 70rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.null{
+  font-size: 28rpx;
+  color: #707070;
+  position: relative;
+  left: 100rpx;
+}
+
+
+
+.white_success{
+  background-color: white;
+  width: 710rpx;
+  margin: auto;
+  height: 400rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title_success{
+  font-size: 24rpx;
+  margin-top: 29rpx;
+}
+
+.hour_success{
+  font-size: 50rpx;
+  margin-top: 58rpx;
+}
+.mounth_success{
+  font-size: 30rpx;
+  margin-top: 34rpx;
+  color: #666666;
+}
+.count_success{
+  font-size: 30rpx;
+  margin-top: 68rpx;
+  color: #666666;
+}
+
+
+.cmp-bc{
+  position: absolute;
+  top:0rpx;
+  width: 100%;
+  height: 1500rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.cmp{
+  width: 650rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-top: 447rpx;
+  /* padding-bottom: 30rpx; */
+  background-color: white;
+}
+
+.cmp-count{
+  width: 100%;
+  border-bottom: solid 1rpx #666666;
+  padding-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.cmpTime{
+  color: #707070;
+  margin-top: 15rpx;
+}
+
+.cmp-option{
+  width: 73%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+  /* background-color: darkseagreen; */
+  font-size: 35rpx;
+}
+.cmp-detail{
+  width: 410rpx;
+  /* background-color: darkgrey; */
+  display: flex;
+  
+}
+
+
+.cmp-decision{
+  width: 49.5%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmp-decision_left{
+  border-right: solid 2rpx #d0d0d0;
+  font-size: 32rpx;
+  color: black;
+}
+.cmp-decision_right{
+  float: right;
+  font-size: 33rpx;
+  color: green;
+}
+
+.cmp-icon{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  right: 10rpx;
+  top : 5rpx
+}

@@ -2,10 +2,10 @@
 
 <view class="max">
   <view class="forinput">
-    <input value="name" focus="true" class="input" ></input>
+    <input placeholder="{{data}}" focus="true" class="input" bindinput="cmpInput" ></input>
   </view>
   <view class="options">
     <view class="no two" bindtap="no" >取消</view>
-    <view class="yes two">确认</view>
+    <view class="yes two" bindtap="yes" >确认</view>
   </view>
 </view>

@@ -1,0 +1,10 @@
+<view class="white">
+  <image src="data:image/png;base64,{{imgData}}" mode="scaleToFill" class="image" ></image>
+  <!-- <view class="notes">
+    此码用于管理员确认身份
+  </view> -->
+  <view class="notes">
+    <text>扫码成功后请下拉刷新更新身份,若失败则</text>
+    <text>点击退出登录然后重新登陆</text>
+  </view>
+</view>

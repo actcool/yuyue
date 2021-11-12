@@ -1,0 +1,61 @@
+<view class="title">
+  <view class="welcome">工作安排</view>   
+</view>
+
+<view class="form" >
+  <view class="white">
+    <view class="remind" > {{time}}</view>
+    
+
+    <picker bindchange="bindProjectChange" wx:if="{{teamId!=2}}" value="{{projcetIndex}}" range="{{project}}">
+      <view class="time">
+        <view class="left">项目</view>
+        <view class="right">{{project[projcetIndex]}}</view>
+      </view>
+    </picker>
+    <view class="time cannot" wx:if="{{teamId==2}}">
+        <view class="left">项目</view>
+        <view class="right">{{project[projcetIndex]}}</view>
+      </view>
+
+    <picker bindchange="bindCarChange" value="{{carIndex}}" range="{{car}}">
+      <view class="time">
+        <view class="left">车号</view>
+        <view class="right">{{car[carIndex]}}</view>
+      </view>
+    </picker>
+
+    
+      <view class="time" wx:if="{{!haveDoLeave}}" >
+        <view class="left_input " bindtap="input_reason" >{{verify}}</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{}}" range="{{timeArray}}">
+          <view class="right_input  " >{{timeArray[0][startTimeIndex]}}-{{timeArray[1][endTimeIndex]}}</view>
+        </picker>
+      </view>
+
+      <view class="time" bindtap="leave" wx:if="{{haveDoLeave}}" >
+        <view class="left_input not" bindtap="input_reason" >{{verify}}</view>
+        <view class="right_input not" >{{timeArray[0][startTimeIndex]}}-{{timeArray[1][endTimeIndex]}}</view>
+      </view>
+    
+
+
+  </view>
+
+
+  <view class="submit" bindtap="submit">
+    <text wx:if="{{flag==0}}" > 提交 </text>
+    <text wx:if="{{flag==1}}" > 修改 </text>
+  </view>
+  <!-- <view class="cancel">
+    撤销
+  </view> -->
+
+</view>
+
+
+
+
+<view class="cmp-bc" wx:if="{{ifcmp}}" bindtap="cancelInput" >
+</view>
+<dx-cmp wx:if="{{ifcmp}}"  bind:no="no" bind:yes="yes" data="{{cmpShow}}" />

@@ -1,0 +1,39 @@
+<view class="find">
+    <input class="input" value="{{inputValue}}"  placeholder="搜索教练" bindinput="inputCoach"></input>
+    <view class="option">
+      <view class="{{inputValue.length==0? 'cantgo' : 'go' }} "  bindtap="search" >搜索</view>
+      <view class="cuo" wx:if="{{inputValue.length!=0}}" bindtap="cls">
+      <iconfont name="cuo" size="22" />
+      </view>
+    </view>
+  </view>
+
+  
+<block wx:for="{{allStudent}}"   wx:for-item="item"   wx:for-index="index">
+  <view class="belongCoach" wx:if="{{showCoach[index]}}" > -------------------- {{item.coach}} -------------------- </view>
+  <view class="white" >
+    <view class="user">
+      <image src="{{item.user_photo}}" class="header"  />
+      <image wx:if="{{item.usersex==1}}" src="/images/man.png" class="sex" />
+      <image wx:if="{{item.usersex==2}}" src="/images/women.png" class="sex" />
+      <iconfont wx:if="{{item.usersex!=2&&item.usersex!=1}}" class="sex" name="noSex" />
+      <view class="count">
+        <text class="name">{{item.username}} </text>
+        <text class="number">{{item.user_mobile}}</text>
+      </view>
+      <view class="navigate"    bindtap="delete" data-flag="{{item.flag}}" data-studentId="{{item.student_id}}" data-index="{{index}}" data-name="{{item.username}}">
+        <text class=" {{item.flag==1? 'text_true' : 'text_fasle' }}   ">删除成员</text>
+        <iconfont name="{{item.flag==1? 'shanchu' : 'shanchu_fasle-copy' }}"  class="icon" />
+      </view>
+    </view>
+  </view>
+
+
+
+</block>
+   
+<view class="icon_kong" wx:if="{{kong}}" >
+  <iconfont class="icon_kong" name="kong" size="70" />
+</view>
+
+ 

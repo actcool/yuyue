@@ -1,10 +1,14 @@
 <view class="out">
   <view class="count">
-    <text class="{{data.ifEffective ? 'effectTime' : 'invalid'}}">{{data.day}}</text>
-    <text class="{{data.ifEffective ? 'effectTime' : 'invalid'}}">{{data.hour}}</text>
+    <text class="{{data.order_status==2 ? 'invalid' : 'effectTime'}}">{{data.date}}</text>
+    <text class="{{data.order_status==2 ? 'invalid' : 'effectTime'}}">{{data.startTime}}-{{data.endTime}}</text>
   </view>
   <view class="count">
-    <text class="{{data.ifEffective ? 'effectCount' : 'invalid'}}">{{data.count}}</text>
-    <text class="{{data.ifEffective ? 'effectCount' : 'invalid'}}">{{data.ifEffective ? '生效中' : '已过期'}}</text>
+    <text wx:if="{{data.order_type==1}}" class="{{data.order_status==0||data.order_status==1 ? 'effectCount' : 'invalid'}}">{{data.coachName}}-{{carArray[data.car]}}-{{data.subject}}</text>
+    <text wx:if="{{data.order_type==2}}" class="{{data.order_status==0||data.order_status==1 ? 'effectCount' : 'invalid'}}">{{data.coachName}}-{{data.car}}-{{data.subject}}-临时名额</text>
+    <text wx:if="{{data.order_status==0}}"  class="effectCount">待生效</text>
+    <text wx:if="{{data.order_status==1}}"  class="effectCount">生效中</text>
+    <text wx:if="{{data.order_status==2}}"  class="invalid">已失效</text>
+    <text wx:if="{{data.order_status==3}}"  class="invalid">已取消</text>
   </view>
 </view> 

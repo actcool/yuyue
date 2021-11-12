@@ -1,0 +1,35 @@
+<view class="title">
+  <view class="welcome">欢迎提出你的宝贵意见</view>   
+</view>
+
+<view class="form" >
+  <view class="feed">
+    <textarea class="input" placeholder="请在这里提交您的宝贵意见把(一条最多200字)~" placeholder-style="color:#6B9DC3;" maxlength="200" bindinput="feedInput" value="{{value}}" >  </textarea>
+  </view>
+  <view class="thank">根据你们的留言我们会做出相关调整,感谢您的提议!</view>
+  <view class="submit" bindtap="submit">
+    提交
+  </view>
+</view>
+
+<view class="show">
+  已提交的建议：
+</view>
+
+<view  wx:if="{{ifNull}}" class="null">
+  暂无提交哦......
+</view>
+
+
+
+<block wx:if="{{!ifNull}}"  wx:for="{{allFeedBack}}"   wx:for-item="item"   wx:for-index="index">
+  <view  class="noNull">
+    <iconfont  name="{{item.suggestion_status==1 ? 'yidu' : 'weidu' }}" class="icon" size="40" />
+    <view class="fortext" >
+      <view class="text">  {{item.creatTime}} </view>
+      <view class="text" >
+        {{item.content}}
+      </view>
+    </view>
+  </view>
+</block>

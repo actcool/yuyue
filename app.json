@@ -1,16 +1,27 @@
 {
   "pages":[
-    "pages/state/state",
+    
     "pages/my/my",
+    "pages/myStudent/myStudent",
+    "pages/work/work",
     "pages/mycoach/mycoach",
-    "pages/user_detail/user_detail",
     "pages/appoint/appoint",
-    "pages/work/work"
+    "pages/leave/leave",
+    "pages/workplan/workplan",
+    "pages/feedback/feedback",
+    "pages/manage/manage",
+    "pages/myfleet/myfleet",
+    "pages/QrCode/QrCode",
+    "pages/scan/scan",
+    "pages/state/state",
+    "pages/user_detail/user_detail"
+    
+    
     
   ],
   "usingComponents": {
     "iconfont": "/iconfont/iconfont"
-},
+  },
 
   "window":{
     "backgroundTextStyle":"light",
@@ -41,7 +52,7 @@
     ],
     "borderStyle": "black" ,
     "color": "#CCCCCC",
-    "selectedColor": "#4783B5"
+    "selectedColor": "#5EB8DB"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

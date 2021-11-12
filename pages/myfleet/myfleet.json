@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "dx-cmp" : "/components/cmp/cmp"
+  },
+  "navigationBarTitleText": "我的车队 ",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true 
+}

@@ -1,13 +1,55 @@
-<view class="userOut"  >
-  <dx-header data="{{user}}" bindtap="userDetail" />
-</view> 
+<block wx:if="{{!hasUserInfo}}">
+  <view class="userOut"  > 
+    <view class="loginOut">
+      <image src="/images/xiaoxin.jpeg" class="img_login" />
+      <view class="title_login">
+        <view class="titletext" >未登录</view>
+        <view class="titlebottom">登陆后查看信息</view>
+      </view>
+      <button class="login" style="width:240rpx" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+        <view class="logintext">登录</view> 
+      </button>
+    </view>
+  </view>  
+  
+  <dx-option   data="{{state}}"     bindtap="state"  /> 
+  <dx-option   data="{{QrCode}}"    bindtap="QrCode"  /> 
+  <dx-option   data="{{feedback}}"  bindtap="feedback"    /> 
+</block>
 
 
-<dx-option   data="{{state}}"      />
-<dx-option   data="{{coach}}"  bindtap="coach" />
-<dx-option   data="{{work}}"       />
-<dx-option   data="{{fleet}}"      />
-<dx-option   data="{{manage}}"     />
-<dx-option   data="{{scan}}"       />
-<dx-option   data="{{QrCode}}"     />
-<dx-option   data="{{feedback}}"   />
+
+
+<block wx:if="{{hasUserInfo}}">
+  <view class="userOut"  > 
+    <dx-header data="{{user}}" bindtap="userDetail" /> 
+  </view>  
+  
+  <!-- 0游客  1学员 2教练  3校长 -->
+  <dx-option   data="{{state}}"     bindtap="state"  wx:if="{{user.role==1}}" /> 
+  <dx-option   data="{{coach}}"     bindtap="coach"  wx:if="{{user.role==1}}" /> 
+  <dx-option   data="{{work}}"      bindtap="work"   wx:if="{{user.role==2}}" /> 
+  <dx-option   data="{{leave}}"     bindtap="leave"  wx:if="{{user.role==2}}" /> 
+  <dx-option   data="{{fleet}}"     bindtap="myfleet" wx:if="{{user.role==2}}" /> 
+  <dx-option   data="{{myStudent}}"    bindtap="myStudent" wx:if="{{user.role==2}}"     /> 
+  <dx-option   data="{{manage}}"    bindtap="manage" wx:if="{{user.role==3}}"     /> 
+  <dx-option   data="{{scan}}"      bindtap="scan"   wx:if="{{user.role==2||user.role==3}}"     /> 
+  <dx-option   data="{{QrCode}}"    bindtap="QrCode"  /> 
+  <dx-option   data="{{feedback}}"  bindtap="feedback"  />
+
+  <view class="out" bindtap="out">
+    <view class="left" >
+      <iconfont  name="tuideng" size="25" /> 
+      <text class="nani" > 退出登录 </text>
+    </view>
+    <iconfont class="right" name="shuxian" size="28" />
+  </view>
+   
+</block>
+
+
+
+<view class="show {{user.role==2 ? 'mt' : 'ab' }}" >
+  <text>若您在使用小程序的过程中遇到什么疑问或问题</text>
+  <text>欢迎咨询 198-3400-8525</text>
+</view>

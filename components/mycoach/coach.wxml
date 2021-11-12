@@ -1,0 +1,26 @@
+<view class="white" >
+  <view class="user">
+    <image src="{{data.userPhoto}}" class="header"  />
+    <image wx:if="{{data.sex==1}}" src="/images/man.png" class="sex" />
+    <image wx:if="{{data.sex==2}}" src="/images/women.png" class="sex" />
+    <view class="count">
+      <text class="name">{{data.coachName}}</text>
+      <text class="number">{{data.mobile}}</text>
+    </view>
+    <view class="navigate">
+      <view class="today text1">
+        <text>{{projectArray[data.todaySubject]}}</text>
+        <text>{{carArray[data.todayCar]}}</text>
+      </view>
+      
+      <view class="kuanxian"></view>
+      <view class="xixian"></view>
+      
+      <view class="toadywork text" >
+        今日安排
+      </view>
+      
+    </view>
+    
+  </view>
+</view>

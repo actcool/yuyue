@@ -1,16 +1,6 @@
-<!-- <view class="white">
-  <dx-header data="{{user}}" class="header" />
-  <dx-number data="{{wechateNumber}}" />
-  <dx-number data="{{phoneNumber}}" />
-</view> -->
 
+<block wx:for="{{allcaoch}}"   wx:for-item="item"   wx:for-index="index">
 
-<block wx:for="{{data}}"   wx:for-item="item"   wx:for-index="index">
-
-  <view class="white">
-    <dx-header data="{{item.user}}" class="header" />
-    <dx-number data="{{item.wechateNumber}}" />
-    <dx-number data="{{item.phoneNumber}}" />
-  </view>
+  <dx-coach data="{{item}}"  />
 
 </block>

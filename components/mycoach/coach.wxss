@@ -1,0 +1,92 @@
+.white{
+  width: 750rpx;
+  height: 180rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.user{
+  width: 682rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 100rpx;
+}
+
+.sex{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top:30rpx;
+  right: 30rpx;
+}
+
+.count{
+  width: 350rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name{
+  font-size: 36rpx;
+}
+
+.number{
+  font-size: 30rpx;
+  color: #9d9d9d;
+}
+
+.navigate{
+  width: 182rpx;
+  height: 102rpx;
+  display: flex;
+  align-items: center; 
+  /* background-color: aqua; */
+}
+
+.today{
+  width: 150rpx;
+  height: 85rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text1{
+  font-size: 30rpx;
+  color: #686868;
+}
+.text{
+  font-size: 18rpx;
+  color: #AAAAAA;
+}
+
+.kuanxian{
+  width: 7rpx;
+  height: 90rpx;
+  background-color: #707070;
+}
+
+.xixian{
+  width: 5rpx;
+  height: 90rpx;
+  background-color: #707070;
+  margin-left: 5rpx;
+}
+
+.toadywork{
+  width: 5rpx;
+  margin-left: 5rpx;
+}
+
+

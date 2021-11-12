@@ -1,0 +1,15 @@
+<view class="white" >
+  <view class="user">
+    <image src="{{data.user_photo}}" class="header"  />
+    <image wx:if="{{data.usersex==1}}" src="/images/man.png" class="sex" />
+    <image wx:if="{{data.usersex==2}}" src="/images/women.png" class="sex" />
+    <view class="count">
+      <text class="name">{{data.username}}</text>
+      <text class="number">{{data.user_mobile}}</text>
+    </view>
+    <view class="navigate">
+      <text class="{{data.flag ? 'text_true' : 'text_fasle' }}">删除成员</text>
+      <iconfont name="{{data.flag ? 'shanchu' : 'shanchu_fasle-copy' }}"  class="icon" />
+    </view>
+  </view>
+</view>

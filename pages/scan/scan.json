@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dx-user" : "/components/mycoach/coach"
+  },
+  "navigationBarBackgroundColor" : "#5CB3D8",
+  "navigationBarTitleText": ""
+}

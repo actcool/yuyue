@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "dx-header" : "/components/my/header-0/header",
-    "dx-number" : "/components/my/detail/detail"
+    "dx-coach" : "/components/mycoach/coach"
   },
-  "navigationBarTitleText": "我的教练 "
+  "navigationBarTitleText": "我的教练 ",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true 
 }

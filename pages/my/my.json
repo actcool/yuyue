@@ -1,7 +1,11 @@
 {
   "usingComponents": {
     "dx-header" : "/components/my/header-0/header",
-    "dx-option" : "/components/my/options/options"
+    "dx-option" : "/components/my/options/options",
+    "dx-cmp" : "/components/cmpForScan/cmp"
   },
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "我的",
+  
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
 }

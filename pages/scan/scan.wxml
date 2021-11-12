@@ -1,0 +1,17 @@
+<view class="title">
+  东鑫驾校身份认定
+</view>
+
+<view class="white" wx:if="{{userRole!=0&&userRole!=1}}">
+  <image src="{{imc}}" class="img" />
+  <text class="name">{{checkname}}</text>
+  <text wx:if="{{userRole==2&&userRole==2&&beRole!=2&&beRole!=3}}" class="explain"> 你确定添加TA为学员吗~~ </text>
+  <text wx:if="{{userRole==2&&beRole==2}}" class="explain"> 你确定添加TA到车队吗~~ </text>
+  <text wx:if="{{userRole==3}}" class="explain"> 你确定添加TA为教练吗~~ </text>
+  <view class="diandian">
+    <view class="circle_l"></view>
+    <view class="circle_r"></view>
+  </view>
+  <view class="choice yes" bindtap="yes" >确定</view>
+  <view class="choice no" bindtap="no" >拒绝</view>
+</view>

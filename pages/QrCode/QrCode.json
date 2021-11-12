@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "我的二维码",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor" : "#5EB8DB"
+}
